@@ -1,0 +1,121 @@
+{
+	"compiler": {
+		"version": "0.8.28+commit.7893614a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "creator",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "contractLocation",
+						"type": "address"
+					}
+				],
+				"name": "Made",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "symbol",
+						"type": "string"
+					}
+				],
+				"name": "make",
+				"outputs": [
+					{
+						"internalType": "contract AquitardExtended",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"src/AquitardExtended.sol": "AquitardFactory"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0xff6d0bb2e285473e5311d9d3caacb525ae3538a80758c10649a4d61029b017bb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8ed324d3920bb545059d66ab97d43e43ee85fd3bd52e03e401f020afb0b120f6",
+				"dweb:/ipfs/QmfEckWLmZkDDcoWrkEvMWhms66xwTLff9DDhegYpvHo1a"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12",
+				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
+			]
+		},
+		"https://github.com/Vectorized/solady/blob/main/src/tokens/ERC20.sol": {
+			"keccak256": "0x1c3cdf5158b29b16ba2d2c7ff1f6d4304754605441257e198b46803f0fa9df1a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f6ed3d15fd372495ff76439878fb5e007ae0b39da3ce3d9fd877ee8147647bb2",
+				"dweb:/ipfs/QmZ1zC91VhPHMXAdcY8SahJMwDsC2B5q9uXFF16R5eHmkV"
+			]
+		},
+		"src/Aquitard.sol": {
+			"keccak256": "0xdca63211ae5c8ceda27f5470afd2d0dc4ae4dda3e69aef24f03f7d470ef63506",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://12c1c8b3d1f6e566b23d55ca54e9ce770cbbb8061ba1453bd13fe5ee8e8596d4",
+				"dweb:/ipfs/QmfQccHzsdawXe4NbQ8kGTdkT58NrWK8nd4LBxh29tQcpU"
+			]
+		},
+		"src/AquitardExtended.sol": {
+			"keccak256": "0x6eb9898230c469cce279a029b5fa2ab3d3b2de79bb434f5b9ec5cca842b22004",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://790e91e0e43e2218ecc85ac7cf411171ceaed4900e9a2255f15c5d35b1b9b361",
+				"dweb:/ipfs/QmaqoTPatTMxiwouB23C9Gay2xuUQpZAy4FkysPB1pK7gB"
+			]
+		}
+	},
+	"version": 1
+}

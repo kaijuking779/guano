@@ -1,0 +1,94 @@
+{
+	"compiler": {
+		"version": "0.8.28+commit.7893614a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "symbol",
+						"type": "string"
+					}
+				],
+				"name": "make",
+				"outputs": [
+					{
+						"internalType": "contract Battery",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"src/GuanoCore.0.0.2.sol": "BatteryFactory"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0xff6d0bb2e285473e5311d9d3caacb525ae3538a80758c10649a4d61029b017bb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8ed324d3920bb545059d66ab97d43e43ee85fd3bd52e03e401f020afb0b120f6",
+				"dweb:/ipfs/QmfEckWLmZkDDcoWrkEvMWhms66xwTLff9DDhegYpvHo1a"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12",
+				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
+			]
+		},
+		"https://github.com/Vectorized/solady/blob/main/src/tokens/ERC20.sol": {
+			"keccak256": "0x1c3cdf5158b29b16ba2d2c7ff1f6d4304754605441257e198b46803f0fa9df1a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f6ed3d15fd372495ff76439878fb5e007ae0b39da3ce3d9fd877ee8147647bb2",
+				"dweb:/ipfs/QmZ1zC91VhPHMXAdcY8SahJMwDsC2B5q9uXFF16R5eHmkV"
+			]
+		},
+		"src/GuanoCore.0.0.2.sol": {
+			"keccak256": "0x1d56805d9c8a752908fd8b5aa2d17d84d729ac4528d5eeb54c40c76211a8514f",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://fc7dc7f247cd79363acfe51f1480b95c4ef7135ab4b51521be62a819d0778ca3",
+				"dweb:/ipfs/QmQEtsa5pnukBpuP7dVo4Fv5eXVwvKV2v3EQLTsJPuNZ9G"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,121 @@
+{
+	"compiler": {
+		"version": "0.8.28+commit.7893614a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "creator",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "contract PinusToken",
+						"name": "newToken",
+						"type": "address"
+					}
+				],
+				"name": "NewToken",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "symbol",
+						"type": "string"
+					}
+				],
+				"name": "make",
+				"outputs": [
+					{
+						"internalType": "contract PinusToken",
+						"name": "newToken",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"src/PinusToken.sol": "PinusTokenFactory"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0xff6d0bb2e285473e5311d9d3caacb525ae3538a80758c10649a4d61029b017bb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8ed324d3920bb545059d66ab97d43e43ee85fd3bd52e03e401f020afb0b120f6",
+				"dweb:/ipfs/QmfEckWLmZkDDcoWrkEvMWhms66xwTLff9DDhegYpvHo1a"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12",
+				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
+			]
+		},
+		"https://github.com/Vectorized/solady/blob/main/src/tokens/ERC20.sol": {
+			"keccak256": "0x1c3cdf5158b29b16ba2d2c7ff1f6d4304754605441257e198b46803f0fa9df1a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f6ed3d15fd372495ff76439878fb5e007ae0b39da3ce3d9fd877ee8147647bb2",
+				"dweb:/ipfs/QmZ1zC91VhPHMXAdcY8SahJMwDsC2B5q9uXFF16R5eHmkV"
+			]
+		},
+		"src/PinusToken.sol": {
+			"keccak256": "0x93ee882d95ec69836787a44af941f57e8fc332eb540497745f67c870ef95ae75",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://9f674f85c154df3aa781476d95f6a49554eb8ccd6edad2b5ebbfaf6ac3548a55",
+				"dweb:/ipfs/QmZhg1RKPb3TWB3i8K4QthKu6niEJwtXiGPKGxzf4cjwpC"
+			]
+		},
+		"src/PinusTokenCore.sol": {
+			"keccak256": "0x7eed1f3ebb04b7d554e9d5d6fb760165650373d734e8b749b822485605b77665",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://2b87c5efc3940b5a0cf6c9ec117f3d2d0298c8a8459ca25e372f22292f79e2ee",
+				"dweb:/ipfs/QmYSdUzsN5yi8FUe5mBDxuXzymwFa8aGsnrNhE8sweHeKR"
+			]
+		}
+	},
+	"version": 1
+}

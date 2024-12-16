@@ -1,0 +1,78 @@
+{
+	"compiler": {
+		"version": "0.8.28+commit.7893614a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "bytes4",
+						"name": "interfaceID",
+						"type": "bytes4"
+					}
+				],
+				"name": "supportsInterface",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"supportsInterface(bytes4)": {
+					"details": "Interface identification is specified in ERC-165. ",
+					"params": {
+						"interfaceID": "The interface identifier, as specified in ERC-165"
+					},
+					"returns": {
+						"_0": "`true` if the contract implements `interfaceID` and  `interfaceID` is not 0xffffffff, `false` otherwise"
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"supportsInterface(bytes4)": {
+					"notice": "Query if a contract implements an interface"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"src/iERC173.sol": "ERC165"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"src/iERC173.sol": {
+			"keccak256": "0xee67ddb742c0991565b671cc89ddddfff1f99ea5ec9c3126713a399948668ac8",
+			"urls": [
+				"bzz-raw://e813e1fa9fe647a4988bfdd4a6f4a85be3c690d39fbf5c7898b70c400f874149",
+				"dweb:/ipfs/QmU4811yob9vKjpiRqV6aiN1qg4ba6HMSFWMqUsDHukSWi"
+			]
+		}
+	},
+	"version": 1
+}

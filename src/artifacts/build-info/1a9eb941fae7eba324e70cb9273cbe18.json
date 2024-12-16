@@ -1,0 +1,417 @@
+{
+	"id": "1a9eb941fae7eba324e70cb9273cbe18",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.8.28",
+	"solcLongVersion": "0.8.28+commit.7893614a",
+	"input": {
+		"language": "Solidity",
+		"sources": {
+			"src/IERC5169.sol": {
+				"content": "interface IERC5169 {\r\n    /// @dev This event emits when the scriptURI is updated, \r\n    /// so wallets implementing this interface can update a cached script\r\n    event ScriptUpdate(string[] newScriptURI);\r\n\r\n    /// @notice Get the scriptURI for the contract\r\n    /// @return The scriptURI\r\n    function scriptURI() external view returns(string[] memory);\r\n\r\n    /// @notice Update the scriptURI \r\n    /// emits event ScriptUpdate(scriptURI memory newScriptURI);\r\n    function setScriptURI(string[] memory newScriptURI) external;\r\n}"
+			}
+		},
+		"settings": {
+			"optimizer": {
+				"enabled": false,
+				"runs": 200
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"storageLayout",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			},
+			"remappings": []
+		}
+	},
+	"output": {
+		"contracts": {
+			"src/IERC5169.sol": {
+				"IERC5169": {
+					"abi": [
+						{
+							"anonymous": false,
+							"inputs": [
+								{
+									"indexed": false,
+									"internalType": "string[]",
+									"name": "newScriptURI",
+									"type": "string[]"
+								}
+							],
+							"name": "ScriptUpdate",
+							"type": "event"
+						},
+						{
+							"inputs": [],
+							"name": "scriptURI",
+							"outputs": [
+								{
+									"internalType": "string[]",
+									"name": "",
+									"type": "string[]"
+								}
+							],
+							"stateMutability": "view",
+							"type": "function"
+						},
+						{
+							"inputs": [
+								{
+									"internalType": "string[]",
+									"name": "newScriptURI",
+									"type": "string[]"
+								}
+							],
+							"name": "setScriptURI",
+							"outputs": [],
+							"stateMutability": "nonpayable",
+							"type": "function"
+						}
+					],
+					"devdoc": {
+						"events": {
+							"ScriptUpdate(string[])": {
+								"details": "This event emits when the scriptURI is updated,  so wallets implementing this interface can update a cached script"
+							}
+						},
+						"kind": "dev",
+						"methods": {
+							"scriptURI()": {
+								"returns": {
+									"_0": "The scriptURI"
+								}
+							}
+						},
+						"version": 1
+					},
+					"evm": {
+						"assembly": "",
+						"bytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"linkReferences": {},
+							"object": "",
+							"opcodes": "",
+							"sourceMap": ""
+						},
+						"deployedBytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"immutableReferences": {},
+							"linkReferences": {},
+							"object": "",
+							"opcodes": "",
+							"sourceMap": ""
+						},
+						"gasEstimates": null,
+						"legacyAssembly": null,
+						"methodIdentifiers": {
+							"scriptURI()": "4bb30912",
+							"setScriptURI(string[])": "e3d61eb3"
+						}
+					},
+					"metadata": "{\"compiler\":{\"version\":\"0.8.28+commit.7893614a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string[]\",\"name\":\"newScriptURI\",\"type\":\"string[]\"}],\"name\":\"ScriptUpdate\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"scriptURI\",\"outputs\":[{\"internalType\":\"string[]\",\"name\":\"\",\"type\":\"string[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string[]\",\"name\":\"newScriptURI\",\"type\":\"string[]\"}],\"name\":\"setScriptURI\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"events\":{\"ScriptUpdate(string[])\":{\"details\":\"This event emits when the scriptURI is updated,  so wallets implementing this interface can update a cached script\"}},\"kind\":\"dev\",\"methods\":{\"scriptURI()\":{\"returns\":{\"_0\":\"The scriptURI\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"scriptURI()\":{\"notice\":\"Get the scriptURI for the contract\"},\"setScriptURI(string[])\":{\"notice\":\"Update the scriptURI  emits event ScriptUpdate(scriptURI memory newScriptURI);\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/IERC5169.sol\":\"IERC5169\"},\"evmVersion\":\"cancun\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"src/IERC5169.sol\":{\"keccak256\":\"0xaf2d5c060059e8f61f2b6affa705a80424602bf36963c50d731fe0612124808a\",\"urls\":[\"bzz-raw://3554ae4373fb6f06869ab7029ae1445351dcab6b53927f57a9afd60a3760b14e\",\"dweb:/ipfs/QmdDN1C8SeYK1D4kaVRAJAQd54qPEJtt3WCYioTVxd5fgy\"]}},\"version\":1}",
+					"storageLayout": {
+						"storage": [],
+						"types": null
+					},
+					"userdoc": {
+						"kind": "user",
+						"methods": {
+							"scriptURI()": {
+								"notice": "Get the scriptURI for the contract"
+							},
+							"setScriptURI(string[])": {
+								"notice": "Update the scriptURI  emits event ScriptUpdate(scriptURI memory newScriptURI);"
+							}
+						},
+						"version": 1
+					}
+				}
+			}
+		},
+		"errors": [
+			{
+				"component": "general",
+				"errorCode": "1878",
+				"formattedMessage": "Warning: SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing \"SPDX-License-Identifier: <SPDX-License>\" to each source file. Use \"SPDX-License-Identifier: UNLICENSED\" for non-open-source code. Please see https://spdx.org for more information.\n--> src/IERC5169.sol\n\n",
+				"message": "SPDX license identifier not provided in source file. Before publishing, consider adding a comment containing \"SPDX-License-Identifier: <SPDX-License>\" to each source file. Use \"SPDX-License-Identifier: UNLICENSED\" for non-open-source code. Please see https://spdx.org for more information.",
+				"severity": "warning",
+				"sourceLocation": {
+					"end": -1,
+					"file": "src/IERC5169.sol",
+					"start": -1
+				},
+				"type": "Warning"
+			},
+			{
+				"component": "general",
+				"errorCode": "3420",
+				"formattedMessage": "Warning: Source file does not specify required compiler version! Consider adding \"pragma solidity ^0.8.28;\"\n--> src/IERC5169.sol\n\n",
+				"message": "Source file does not specify required compiler version! Consider adding \"pragma solidity ^0.8.28;\"",
+				"severity": "warning",
+				"sourceLocation": {
+					"end": -1,
+					"file": "src/IERC5169.sol",
+					"start": -1
+				},
+				"type": "Warning"
+			}
+		],
+		"sources": {
+			"src/IERC5169.sol": {
+				"ast": {
+					"absolutePath": "src/IERC5169.sol",
+					"exportedSymbols": {
+						"IERC5169": [
+							21
+						]
+					},
+					"id": 22,
+					"nodeType": "SourceUnit",
+					"nodes": [
+						{
+							"abstract": false,
+							"baseContracts": [],
+							"canonicalName": "IERC5169",
+							"contractDependencies": [],
+							"contractKind": "interface",
+							"fullyImplemented": false,
+							"id": 21,
+							"linearizedBaseContracts": [
+								21
+							],
+							"name": "IERC5169",
+							"nameLocation": "10:8:0",
+							"nodeType": "ContractDefinition",
+							"nodes": [
+								{
+									"anonymous": false,
+									"documentation": {
+										"id": 1,
+										"nodeType": "StructuredDocumentation",
+										"src": "26:132:0",
+										"text": "@dev This event emits when the scriptURI is updated, \n so wallets implementing this interface can update a cached script"
+									},
+									"eventSelector": "9538911740e5519a40db77fb5f637de0d56cdd804318d81ae270cc24fbd8479e",
+									"id": 6,
+									"name": "ScriptUpdate",
+									"nameLocation": "170:12:0",
+									"nodeType": "EventDefinition",
+									"parameters": {
+										"id": 5,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 4,
+												"indexed": false,
+												"mutability": "mutable",
+												"name": "newScriptURI",
+												"nameLocation": "192:12:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 6,
+												"src": "183:21:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_array$_t_string_memory_ptr_$dyn_memory_ptr",
+													"typeString": "string[]"
+												},
+												"typeName": {
+													"baseType": {
+														"id": 2,
+														"name": "string",
+														"nodeType": "ElementaryTypeName",
+														"src": "183:6:0",
+														"typeDescriptions": {
+															"typeIdentifier": "t_string_storage_ptr",
+															"typeString": "string"
+														}
+													},
+													"id": 3,
+													"nodeType": "ArrayTypeName",
+													"src": "183:8:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+														"typeString": "string[]"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "182:23:0"
+									},
+									"src": "164:42:0"
+								},
+								{
+									"documentation": {
+										"id": 7,
+										"nodeType": "StructuredDocumentation",
+										"src": "214:77:0",
+										"text": "@notice Get the scriptURI for the contract\n @return The scriptURI"
+									},
+									"functionSelector": "4bb30912",
+									"id": 13,
+									"implemented": false,
+									"kind": "function",
+									"modifiers": [],
+									"name": "scriptURI",
+									"nameLocation": "306:9:0",
+									"nodeType": "FunctionDefinition",
+									"parameters": {
+										"id": 8,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "315:2:0"
+									},
+									"returnParameters": {
+										"id": 12,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 11,
+												"mutability": "mutable",
+												"name": "",
+												"nameLocation": "-1:-1:-1",
+												"nodeType": "VariableDeclaration",
+												"scope": 13,
+												"src": "340:15:0",
+												"stateVariable": false,
+												"storageLocation": "memory",
+												"typeDescriptions": {
+													"typeIdentifier": "t_array$_t_string_memory_ptr_$dyn_memory_ptr",
+													"typeString": "string[]"
+												},
+												"typeName": {
+													"baseType": {
+														"id": 9,
+														"name": "string",
+														"nodeType": "ElementaryTypeName",
+														"src": "340:6:0",
+														"typeDescriptions": {
+															"typeIdentifier": "t_string_storage_ptr",
+															"typeString": "string"
+														}
+													},
+													"id": 10,
+													"nodeType": "ArrayTypeName",
+													"src": "340:8:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+														"typeString": "string[]"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "339:17:0"
+									},
+									"scope": 21,
+									"src": "297:60:0",
+									"stateMutability": "view",
+									"virtual": false,
+									"visibility": "external"
+								},
+								{
+									"documentation": {
+										"id": 14,
+										"nodeType": "StructuredDocumentation",
+										"src": "365:99:0",
+										"text": "@notice Update the scriptURI \n emits event ScriptUpdate(scriptURI memory newScriptURI);"
+									},
+									"functionSelector": "e3d61eb3",
+									"id": 20,
+									"implemented": false,
+									"kind": "function",
+									"modifiers": [],
+									"name": "setScriptURI",
+									"nameLocation": "479:12:0",
+									"nodeType": "FunctionDefinition",
+									"parameters": {
+										"id": 18,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 17,
+												"mutability": "mutable",
+												"name": "newScriptURI",
+												"nameLocation": "508:12:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 20,
+												"src": "492:28:0",
+												"stateVariable": false,
+												"storageLocation": "memory",
+												"typeDescriptions": {
+													"typeIdentifier": "t_array$_t_string_memory_ptr_$dyn_memory_ptr",
+													"typeString": "string[]"
+												},
+												"typeName": {
+													"baseType": {
+														"id": 15,
+														"name": "string",
+														"nodeType": "ElementaryTypeName",
+														"src": "492:6:0",
+														"typeDescriptions": {
+															"typeIdentifier": "t_string_storage_ptr",
+															"typeString": "string"
+														}
+													},
+													"id": 16,
+													"nodeType": "ArrayTypeName",
+													"src": "492:8:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+														"typeString": "string[]"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "491:30:0"
+									},
+									"returnParameters": {
+										"id": 19,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "530:0:0"
+									},
+									"scope": 21,
+									"src": "470:61:0",
+									"stateMutability": "nonpayable",
+									"virtual": false,
+									"visibility": "external"
+								}
+							],
+							"scope": 22,
+							"src": "0:534:0",
+							"usedErrors": [],
+							"usedEvents": [
+								6
+							]
+						}
+					],
+					"src": "0:534:0"
+				},
+				"id": 0
+			}
+		}
+	}
+}
