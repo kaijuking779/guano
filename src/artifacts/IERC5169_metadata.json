@@ -6,77 +6,33 @@
 	"output": {
 		"abi": [
 			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": false,
-						"internalType": "string[]",
-						"name": "newScriptURI",
-						"type": "string[]"
-					}
-				],
-				"name": "ScriptUpdate",
-				"type": "event"
-			},
-			{
 				"inputs": [],
 				"name": "scriptURI",
 				"outputs": [
 					{
-						"internalType": "string[]",
+						"internalType": "string",
 						"name": "",
-						"type": "string[]"
+						"type": "string"
 					}
 				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "string[]",
-						"name": "newScriptURI",
-						"type": "string[]"
-					}
-				],
-				"name": "setScriptURI",
-				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			}
 		],
 		"devdoc": {
-			"events": {
-				"ScriptUpdate(string[])": {
-					"details": "This event emits when the scriptURI is updated,  so wallets implementing this interface can update a cached script"
-				}
-			},
 			"kind": "dev",
-			"methods": {
-				"scriptURI()": {
-					"returns": {
-						"_0": "The scriptURI"
-					}
-				}
-			},
+			"methods": {},
 			"version": 1
 		},
 		"userdoc": {
 			"kind": "user",
-			"methods": {
-				"scriptURI()": {
-					"notice": "Get the scriptURI for the contract"
-				},
-				"setScriptURI(string[])": {
-					"notice": "Update the scriptURI  emits event ScriptUpdate(scriptURI memory newScriptURI);"
-				}
-			},
+			"methods": {},
 			"version": 1
 		}
 	},
 	"settings": {
 		"compilationTarget": {
-			"src/IERC5169.sol": "IERC5169"
+			"src/ERC1046.sol": "IERC5169"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -84,17 +40,18 @@
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": false,
+			"enabled": true,
 			"runs": 200
 		},
 		"remappings": []
 	},
 	"sources": {
-		"src/IERC5169.sol": {
-			"keccak256": "0xaf2d5c060059e8f61f2b6affa705a80424602bf36963c50d731fe0612124808a",
+		"src/ERC1046.sol": {
+			"keccak256": "0xb27cb9735a2aa48f7b2f3a1ff9873abb8c05f84bc13871abb75d8e34829c99ad",
+			"license": "GPL-3.0-or-later",
 			"urls": [
-				"bzz-raw://3554ae4373fb6f06869ab7029ae1445351dcab6b53927f57a9afd60a3760b14e",
-				"dweb:/ipfs/QmdDN1C8SeYK1D4kaVRAJAQd54qPEJtt3WCYioTVxd5fgy"
+				"bzz-raw://92bae83fde0f34f1261c78aaf0758fc4e8eac017024cbad318d272e9372d0701",
+				"dweb:/ipfs/QmTh6bmZo517rtuLu2kJTCguWd66MV12KdpmkPP4LDssvT"
 			]
 		}
 	},

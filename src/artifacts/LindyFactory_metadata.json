@@ -1,0 +1,286 @@
+{
+	"compiler": {
+		"version": "0.8.28+commit.7893614a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "contract ERC20",
+						"name": "asset",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "contract AquitardLP",
+						"name": "liquidityPool",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint128",
+						"name": "erc20Inhibitor",
+						"type": "uint128"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint128",
+						"name": "erc20PurchasableRate",
+						"type": "uint128"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint128",
+						"name": "nativeInhibitor",
+						"type": "uint128"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint128",
+						"name": "nativePurchasableRate",
+						"type": "uint128"
+					}
+				],
+				"name": "NewLiquidityPool",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "creator",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "contract PinusVault",
+						"name": "newVault",
+						"type": "address"
+					}
+				],
+				"name": "NewVault",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "contract ERC20",
+						"name": "asset",
+						"type": "address"
+					},
+					{
+						"internalType": "uint128",
+						"name": "erc20Inhibitor",
+						"type": "uint128"
+					},
+					{
+						"internalType": "uint128",
+						"name": "erc20PurchasableRate",
+						"type": "uint128"
+					},
+					{
+						"internalType": "uint128",
+						"name": "nativeInhibitor",
+						"type": "uint128"
+					},
+					{
+						"internalType": "uint128",
+						"name": "nativePurchasableRate",
+						"type": "uint128"
+					}
+				],
+				"name": "makeLiquidityPool",
+				"outputs": [
+					{
+						"internalType": "contract AquitardLP",
+						"name": "newLP",
+						"type": "address"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "contract ERC20",
+						"name": "asset",
+						"type": "address"
+					},
+					{
+						"internalType": "uint128",
+						"name": "erc20Inhibitor",
+						"type": "uint128"
+					},
+					{
+						"internalType": "uint128",
+						"name": "erc20PurchasableRate",
+						"type": "uint128"
+					},
+					{
+						"internalType": "uint128",
+						"name": "nativeInhibitor",
+						"type": "uint128"
+					},
+					{
+						"internalType": "uint128",
+						"name": "nativePurchasableRate",
+						"type": "uint128"
+					},
+					{
+						"internalType": "uint256",
+						"name": "assets",
+						"type": "uint256"
+					}
+				],
+				"name": "makeLiquidityPool",
+				"outputs": [
+					{
+						"internalType": "contract AquitardLP",
+						"name": "newLP",
+						"type": "address"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "symbol",
+						"type": "string"
+					}
+				],
+				"name": "makeVault",
+				"outputs": [
+					{
+						"internalType": "contract PinusVault",
+						"name": "newVault",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"src/LindyFactory.sol": "LindyFactory"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0xff6d0bb2e285473e5311d9d3caacb525ae3538a80758c10649a4d61029b017bb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8ed324d3920bb545059d66ab97d43e43ee85fd3bd52e03e401f020afb0b120f6",
+				"dweb:/ipfs/QmfEckWLmZkDDcoWrkEvMWhms66xwTLff9DDhegYpvHo1a"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12",
+				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
+			]
+		},
+		"https://github.com/Dexaran/ERC223-token-standard/blob/development/token/ERC223/IERC223Recipient.sol": {
+			"keccak256": "0x7a6b6ee4848db6125d60425357ce1431162c8ad3a8540b9c9d546078d032aed9",
+			"urls": [
+				"bzz-raw://dff0d4bc5574ef47e89e364ffb711d5f4f2eea483fc92df20f77696b8b4f963d",
+				"dweb:/ipfs/QmbTyL9FCYFtn4tCo7MzGjsJjhP4QbKySvbpkoGmUeFECt"
+			]
+		},
+		"https://github.com/Vectorized/solady/blob/main/src/tokens/ERC20.sol": {
+			"keccak256": "0x1c3cdf5158b29b16ba2d2c7ff1f6d4304754605441257e198b46803f0fa9df1a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f6ed3d15fd372495ff76439878fb5e007ae0b39da3ce3d9fd877ee8147647bb2",
+				"dweb:/ipfs/QmZ1zC91VhPHMXAdcY8SahJMwDsC2B5q9uXFF16R5eHmkV"
+			]
+		},
+		"src/AquitardLP.0.0.1.sol": {
+			"keccak256": "0x9d348035217384f67761bdc9c3664627a3ddcdd7bbae55625df0059131a30d37",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://e5a70090083f0d451885cb9a84fba94e4286a9a257fddaa43b00443f39abe3cb",
+				"dweb:/ipfs/QmbSAZ4GSdG2ghSf4bdUB7UM1op6iPxdFAgXcqJVkuwdEp"
+			]
+		},
+		"src/ERC223.sol": {
+			"keccak256": "0x2479340fcf249ff8fc1ae63db370c5c3ad56adcd332b289e99b228e191b63d7d",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://1828bc6ee9897e6d7175d3637d5604ac6584c933827ae9bd8b691e0ed2cca769",
+				"dweb:/ipfs/QmbE2xHNwy8gwS3f9fDTGTcqNfC3W9kmXx9YqLa2jRXXiV"
+			]
+		},
+		"src/ExchangeAbstract.sol": {
+			"keccak256": "0x6a757201b911275266db56da33e7020b066f5e6b9ac8a3a5d5c7b69fd1e996f6",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://2217ae0041b3515f3d311752290e195f73a2572cb0a6dc1ae3491ef54fb8314a",
+				"dweb:/ipfs/QmRXyCXB8X8Qm5J3NWVT1jgvRsTkMoQddgH8isW7wgqNRn"
+			]
+		},
+		"src/LindyFactory.sol": {
+			"keccak256": "0x9318117040e3e3d3d3ee8c6a68eb5510b2ec4f0dd5675bc0e05eacb90de7d81e",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://ad033571b6b6a09155e371f642ad4ed9dabc2b9ccce49942d698ec126445c466",
+				"dweb:/ipfs/Qmeyv8pozrqo1dSmHkd7xZ92NwKVtA9vWt1jF7mWKbU3Ps"
+			]
+		},
+		"src/PinusVault.sol": {
+			"keccak256": "0xd10731c534ae65444a88d0109b02ab08a4cc007d184c943d22fe3fd2d7712a42",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://eb452cd76d974c844570f6d53de10be7b2d4c143d573e72b75e8dc486467256f",
+				"dweb:/ipfs/QmRDKJbh4CQy6odHpQsaAYuF7wf26dBepGGZASJaNJ3VMB"
+			]
+		},
+		"src/SwapAbstract.sol": {
+			"keccak256": "0x83c28ebefdb56b5d94cc056d0fbfe53a4a63024f544677265da17d9eaf45f962",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://adf86c6316348330d54c7ff9402732225966e1bc5aaede95650d88cb9d3ee9b3",
+				"dweb:/ipfs/QmdUawoaXU78ahcYx8RDoB1FTth2VHqpUQNNX64Voyb7FR"
+			]
+		}
+	},
+	"version": 1
+}

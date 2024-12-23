@@ -1,4 +1,4 @@
-# Slime
+# Lindy Protocol
 
 
 ---

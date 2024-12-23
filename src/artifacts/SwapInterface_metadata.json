@@ -1,0 +1,110 @@
+{
+	"compiler": {
+		"version": "0.8.28+commit.7893614a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint128",
+						"name": "erc20Sold",
+						"type": "uint128"
+					},
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "amount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "deadline",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint8",
+								"name": "v",
+								"type": "uint8"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "r",
+								"type": "bytes32"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "s",
+								"type": "bytes32"
+							}
+						],
+						"internalType": "struct Permit2Sig",
+						"name": "sig",
+						"type": "tuple"
+					}
+				],
+				"name": "erc20ToNativeSwapInput",
+				"outputs": [
+					{
+						"internalType": "uint128",
+						"name": "nativeBought",
+						"type": "uint128"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "nativeToERC20SwapInput",
+				"outputs": [
+					{
+						"internalType": "uint128",
+						"name": "erc20Bought",
+						"type": "uint128"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"src/SwapInterface.sol": "SwapInterface"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"src/SwapInterface.sol": {
+			"keccak256": "0xa3509655f33091859db4057443e8579170e96978d68943406bf62c8b352c2c0d",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://68985e4020d3ea51b8e7106d859c1ad549000f9dd9d5812358d0784abe57e90e",
+				"dweb:/ipfs/QmaXjGy6vRMiZnA52zYnGnuD9yQEJhhGsQT7DB5cFoeCUF"
+			]
+		}
+	},
+	"version": 1
+}

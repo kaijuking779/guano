@@ -49,47 +49,20 @@
 		},
 		"gasEstimates": null,
 		"methodIdentifiers": {
-			"scriptURI()": "4bb30912",
-			"setScriptURI(string[])": "e3d61eb3"
+			"scriptURI()": "4bb30912"
 		}
 	},
 	"abi": [
-		{
-			"anonymous": false,
-			"inputs": [
-				{
-					"indexed": false,
-					"internalType": "string[]",
-					"name": "newScriptURI",
-					"type": "string[]"
-				}
-			],
-			"name": "ScriptUpdate",
-			"type": "event"
-		},
 		{
 			"inputs": [],
 			"name": "scriptURI",
 			"outputs": [
 				{
-					"internalType": "string[]",
+					"internalType": "string",
 					"name": "",
-					"type": "string[]"
+					"type": "string"
 				}
 			],
-			"stateMutability": "view",
-			"type": "function"
-		},
-		{
-			"inputs": [
-				{
-					"internalType": "string[]",
-					"name": "newScriptURI",
-					"type": "string[]"
-				}
-			],
-			"name": "setScriptURI",
-			"outputs": [],
 			"stateMutability": "nonpayable",
 			"type": "function"
 		}

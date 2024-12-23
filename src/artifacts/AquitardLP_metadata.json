@@ -760,19 +760,19 @@
 			]
 		},
 		"src/AquitardLP.0.0.1.sol": {
-			"keccak256": "0xa72ff7576814c21a69e0b75bdf909c2ad886fb39d4ebf57504735899d0a234c0",
+			"keccak256": "0x649481d36c7b8f6b70e3156a654700a5016fa62367569f8c79c339fad35a5676",
 			"license": "GPL-3.0-or-later",
 			"urls": [
-				"bzz-raw://a19ee8a93e2261df2c0a96fb4e39895e21982a4346b82fb1c39081bddfc18440",
-				"dweb:/ipfs/QmV7XboCKig6eK4ACCLdGrro39jGFb3JsxpDC58F58deqo"
+				"bzz-raw://d532fce9f402fb68b73f2c3e17218d5dda1bcf63968ddff6780ead275b64614f",
+				"dweb:/ipfs/Qmbntau5Q46ruMd6eoz6cQeKaxLEwL433jiebaEHqwB8vH"
 			]
 		},
 		"src/AquitardLPCore.0.0.1.sol": {
-			"keccak256": "0xcfd5716554aae219ffe8240c692cae028082e921a58ee6050225d223746e0911",
+			"keccak256": "0xec3089be3be8c517b8d7819033a3ac893861a953c1049659ed5f0e3af6211fd3",
 			"license": "GPL-3.0-or-later",
 			"urls": [
-				"bzz-raw://ccce922cbcedb0b0d62d8e4e4191d04c53953bce5f9eb915d634fde99664cfe2",
-				"dweb:/ipfs/QmV27QtxpxZih81AK46WG5KYAK6Z3SYaCvQRd12eaeP5Rs"
+				"bzz-raw://9fcadc1048fd9f6b4dd9a56af618d684debfc71035c4a57482577b22e2a43455",
+				"dweb:/ipfs/QmNtRuGHM4WZRsiN8thwZ1fVYTMD5YAMemJiV2b9Qo5Er6"
 			]
 		}
 	},

@@ -1,0 +1,59 @@
+{
+	"compiler": {
+		"version": "0.8.28+commit.7893614a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "tokenURI",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"src/IERC1046.sol": "IERC1046"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"src/IERC1046.sol": {
+			"keccak256": "0x1e1a79ce6ef9ac6040b895657b80f95b3f21ef5eb071cd8a6dcdc28773b191a3",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://a7d8124298e4dbcfb8f3ca86d0493a78d9bebce32dad3151af243348cea3dde5",
+				"dweb:/ipfs/Qme2svf9dywUu2GfNGV8bCnvhixsXJ1QrBT8gcd58wgRHN"
+			]
+		}
+	},
+	"version": 1
+}

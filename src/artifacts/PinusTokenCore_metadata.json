@@ -239,32 +239,6 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "_name",
-				"outputs": [
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "_symbol",
-				"outputs": [
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -792,7 +766,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"src/PinusTokenCore.sol": "PinusTokenCore"
+			"src/PinusVaultCore.sol": "PinusTokenCore"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -830,12 +804,12 @@
 				"dweb:/ipfs/QmZ1zC91VhPHMXAdcY8SahJMwDsC2B5q9uXFF16R5eHmkV"
 			]
 		},
-		"src/PinusTokenCore.sol": {
-			"keccak256": "0x7eed1f3ebb04b7d554e9d5d6fb760165650373d734e8b749b822485605b77665",
+		"src/PinusVaultCore.sol": {
+			"keccak256": "0xff9ef7e2b1a01375052333ef2214cb29afe675598fa6b828cb8630901cfdf969",
 			"license": "GPL-3.0-or-later",
 			"urls": [
-				"bzz-raw://2b87c5efc3940b5a0cf6c9ec117f3d2d0298c8a8459ca25e372f22292f79e2ee",
-				"dweb:/ipfs/QmYSdUzsN5yi8FUe5mBDxuXzymwFa8aGsnrNhE8sweHeKR"
+				"bzz-raw://77d077d3665f8e1ca21e3c815e9f7db53ad8db80831f03f0f014f60b6bb5884f",
+				"dweb:/ipfs/QmNPxS44Yu2Rhs8K6vTBsyvWT4GhXXgZiNdJJAxK3UKpMs"
 			]
 		}
 	},
