@@ -20,7 +20,7 @@
 			},
 			{
 				"inputs": [],
-				"name": "erc20Inhibitor",
+				"name": "erc20BuyableRate",
 				"outputs": [
 					{
 						"internalType": "uint128",
@@ -33,7 +33,65 @@
 			},
 			{
 				"inputs": [],
-				"name": "erc20PurchasableRate",
+				"name": "erc20BuyableTime",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "erc20SellInhibitor",
+				"outputs": [
+					{
+						"internalType": "uint128",
+						"name": "",
+						"type": "uint128"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "erc20sSold",
+						"type": "uint256"
+					}
+				],
+				"name": "erc20ToNativePrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "nativesBought",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "erc20sBuyable",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "nativeBuyableRate",
 				"outputs": [
 					{
 						"internalType": "uint128",
@@ -46,200 +104,12 @@
 			},
 			{
 				"inputs": [],
-				"name": "erc20PurchasableTime",
+				"name": "nativeSellInhibitor",
 				"outputs": [
 					{
-						"internalType": "uint256",
+						"internalType": "uint128",
 						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "contract SwapAbstract",
-						"name": "sa",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "erc20s",
-						"type": "uint256"
-					},
-					{
-						"internalType": "address",
-						"name": "receiver",
-						"type": "address"
-					}
-				],
-				"name": "erc20ToNativeSwap",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "earned",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "erc20sSold",
-						"type": "uint256"
-					},
-					{
-						"internalType": "address",
-						"name": "recipient",
-						"type": "address"
-					}
-				],
-				"name": "erc20ToNativeSwap",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "nativesBought",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "erc20sSold",
-						"type": "uint256"
-					}
-				],
-				"name": "erc20ToNativeSwap",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "nativesBought",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "erc20sSold",
-						"type": "uint256"
-					},
-					{
-						"components": [
-							{
-								"internalType": "uint256",
-								"name": "deadline",
-								"type": "uint256"
-							},
-							{
-								"internalType": "uint8",
-								"name": "v",
-								"type": "uint8"
-							},
-							{
-								"internalType": "bytes32",
-								"name": "r",
-								"type": "bytes32"
-							},
-							{
-								"internalType": "bytes32",
-								"name": "s",
-								"type": "bytes32"
-							}
-						],
-						"internalType": "struct Permit2Sig",
-						"name": "sig",
-						"type": "tuple"
-					}
-				],
-				"name": "erc20ToNativeSwap",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "nativesBought",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "erc20sSold",
-						"type": "uint256"
-					},
-					{
-						"internalType": "address",
-						"name": "recipient",
-						"type": "address"
-					},
-					{
-						"components": [
-							{
-								"internalType": "uint256",
-								"name": "deadline",
-								"type": "uint256"
-							},
-							{
-								"internalType": "uint8",
-								"name": "v",
-								"type": "uint8"
-							},
-							{
-								"internalType": "bytes32",
-								"name": "r",
-								"type": "bytes32"
-							},
-							{
-								"internalType": "bytes32",
-								"name": "s",
-								"type": "bytes32"
-							}
-						],
-						"internalType": "struct Permit2Sig",
-						"name": "sig",
-						"type": "tuple"
-					}
-				],
-				"name": "erc20ToNativeSwap",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "nativesBought",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "erc20sSold",
-						"type": "uint256"
-					}
-				],
-				"name": "getERC20ToNativePrice",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "nativesBought",
-						"type": "uint256"
+						"type": "uint128"
 					}
 				],
 				"stateMutability": "view",
@@ -253,7 +123,7 @@
 						"type": "uint256"
 					}
 				],
-				"name": "getNativeToERC20Price",
+				"name": "nativeToERC20Price",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -266,33 +136,7 @@
 			},
 			{
 				"inputs": [],
-				"name": "nativeInhibitor",
-				"outputs": [
-					{
-						"internalType": "uint128",
-						"name": "",
-						"type": "uint128"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "nativePurchasableRate",
-				"outputs": [
-					{
-						"internalType": "uint128",
-						"name": "",
-						"type": "uint128"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "nativePurchasableTime",
+				"name": "nativesBuyable",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -312,20 +156,20 @@
 					},
 					{
 						"internalType": "uint256",
-						"name": "natives",
+						"name": "erc20sSold",
 						"type": "uint256"
 					},
 					{
 						"internalType": "address",
-						"name": "receiver",
+						"name": "to",
 						"type": "address"
 					}
 				],
-				"name": "nativeToERC20Swap",
+				"name": "swapERC20ToNative",
 				"outputs": [
 					{
 						"internalType": "uint256",
-						"name": "earned",
+						"name": "erc20sEarned",
 						"type": "uint256"
 					}
 				],
@@ -333,8 +177,196 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "erc20sSold",
+						"type": "uint256"
+					}
+				],
+				"name": "swapERC20ToNative",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "nativesBought",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "erc20sSold",
+						"type": "uint256"
+					},
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "deadline",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint8",
+								"name": "v",
+								"type": "uint8"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "r",
+								"type": "bytes32"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "s",
+								"type": "bytes32"
+							}
+						],
+						"internalType": "struct Permit2Sig",
+						"name": "sig",
+						"type": "tuple"
+					}
+				],
+				"name": "swapERC20ToNative",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "nativesBought",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "erc20sSold",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "deadline",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint8",
+								"name": "v",
+								"type": "uint8"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "r",
+								"type": "bytes32"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "s",
+								"type": "bytes32"
+							}
+						],
+						"internalType": "struct Permit2Sig",
+						"name": "sig",
+						"type": "tuple"
+					}
+				],
+				"name": "swapERC20ToNative",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "nativesBought",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "erc20sSold",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					}
+				],
+				"name": "swapERC20ToNative",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "nativesBought",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "contract SwapAbstract",
+						"name": "sa",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "erc20sSold",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					}
+				],
+				"name": "swapERC223LToNative",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "erc20sEarned",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					}
+				],
+				"name": "swapNativeToERC20",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "erc20sBought",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
-				"name": "nativeToERC20Swap",
+				"name": "swapNativeToERC20",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -348,46 +380,59 @@
 			{
 				"inputs": [
 					{
+						"internalType": "contract SwapAbstract",
+						"name": "sa",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "nativesSold",
+						"type": "uint256"
+					},
+					{
 						"internalType": "address",
-						"name": "recipient",
+						"name": "to",
 						"type": "address"
 					}
 				],
-				"name": "nativeToERC20Swap",
+				"name": "swapNativeToERC20",
 				"outputs": [
 					{
 						"internalType": "uint256",
-						"name": "erc20sBought",
+						"name": "nativesEarned",
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "payable",
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "purchasableERC20s",
-				"outputs": [
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
 					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "value",
 						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
 					}
 				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "purchasableNatives",
+				"name": "tokenReceived",
 				"outputs": [
 					{
-						"internalType": "uint256",
+						"internalType": "bytes4",
 						"name": "",
-						"type": "uint256"
+						"type": "bytes4"
 					}
 				],
-				"stateMutability": "view",
+				"stateMutability": "nonpayable",
 				"type": "function"
 			}
 		],
@@ -418,6 +463,13 @@
 		"remappings": []
 	},
 	"sources": {
+		"https://github.com/Dexaran/ERC223-token-standard/blob/development/token/ERC223/IERC223Recipient.sol": {
+			"keccak256": "0x7a6b6ee4848db6125d60425357ce1431162c8ad3a8540b9c9d546078d032aed9",
+			"urls": [
+				"bzz-raw://dff0d4bc5574ef47e89e364ffb711d5f4f2eea483fc92df20f77696b8b4f963d",
+				"dweb:/ipfs/QmbTyL9FCYFtn4tCo7MzGjsJjhP4QbKySvbpkoGmUeFECt"
+			]
+		},
 		"https://github.com/Vectorized/solady/blob/main/src/tokens/ERC20.sol": {
 			"keccak256": "0x1c3cdf5158b29b16ba2d2c7ff1f6d4304754605441257e198b46803f0fa9df1a",
 			"license": "MIT",
@@ -426,20 +478,28 @@
 				"dweb:/ipfs/QmZ1zC91VhPHMXAdcY8SahJMwDsC2B5q9uXFF16R5eHmkV"
 			]
 		},
-		"src/ExchangeAbstract.sol": {
-			"keccak256": "0x67bb1cdfb77a91d36fb7a09865363376dca94dc82816b77ca75f7cc3a992a722",
+		"src/ERC223L.sol": {
+			"keccak256": "0x8d35ba2629dc6aaf2f4fdcbeae764ec62014ba08c87c6b90c4adc97e3a30bf95",
 			"license": "GPL-3.0-or-later",
 			"urls": [
-				"bzz-raw://fc0938cc6ec2d712d4a90d2482f7bac84337da9400f26d658158ed7d07f84235",
-				"dweb:/ipfs/QmeKFpYqaWiJBWZW9MP1bxbqV1BR3yiYa1LX3Z2593BoCS"
+				"bzz-raw://9cf5c85fa80983b9c03d75007ed53d08079c70103533fd10b419ed54bdfedec0",
+				"dweb:/ipfs/QmQCMMmvMgsh772xBhdeTSer1GcXifDiBdKVnoUSvmZXsm"
+			]
+		},
+		"src/ExchangeAbstract.sol": {
+			"keccak256": "0xec1cad683630e7b3d2ac16eda3fe5eb7c7c49557cf8b50154084e55d2d746d09",
+			"license": "GPL-3.0-or-later",
+			"urls": [
+				"bzz-raw://d7ed8679ff117c72e641046cd0dbc922d7a27093dc68161ca41e2e1e8567cb48",
+				"dweb:/ipfs/Qma7G6BFLYr6HxvXjWCzE6XTcRsTcoLMaH9fgNqoczwaom"
 			]
 		},
 		"src/SwapAbstract.sol": {
-			"keccak256": "0x5eeeb15e8b9557a53c4d856ba0f135f3531db0ed94974fe3dca92e0a49e275e3",
+			"keccak256": "0xc6e79fbf9f9a6869b4e2a5df3d28758962f2075d620cd050941f56b811308ad7",
 			"license": "GPL-3.0-or-later",
 			"urls": [
-				"bzz-raw://4161cbdd9fdd6be78d43d7342e25a050683d5f2a96013d38b699473205c99bbe",
-				"dweb:/ipfs/QmNfJz27Z7g4kgwkHmWr2RsAXVApybNkMcWbJCXdRotxJx"
+				"bzz-raw://283cb4bb302ab49b88c2b21b92e81b59d7722d35934feafbd1005f10686e7f06",
+				"dweb:/ipfs/Qmdp3UexkWKLafpTgCeSCJbcWYocH1yzQihRnuwzvQiSMx"
 			]
 		}
 	},

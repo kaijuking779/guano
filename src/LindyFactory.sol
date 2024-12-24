@@ -15,10 +15,13 @@ contract LindyFactory {
     event NewLiquidityPool(
         ERC20 indexed asset, 
         AquitardLP liquidityPool, 
-        uint128 erc20SellInhibitor, 
+        /*
         uint128 erc20BuyableRate,
+        uint128 erc20SellInhibitor, 
+        uint128 nativeBuyableRate,
         uint128 nativeSellInhibitor,
-        uint128 nativeBuyableRate 
+        */
+        ExchangeConfig ec
         );
 
     function makeVault(string memory name, string memory symbol) external returns (PinusVault newVault) {
@@ -29,17 +32,11 @@ contract LindyFactory {
     /* Native Token LP */
     function makeLiquidityPool(
         ERC20 asset, 
-        uint128 erc20SellInhibitor, 
-        uint128 erc20BuyableRate,
-        uint128 nativeSellInhibitor,
-        uint128 nativeBuyableRate
+        ExchangeConfig memory ec
     ) external payable returns (AquitardLP newLP) {
         newLP = new AquitardLP(
             asset,
-            erc20SellInhibitor, 
-            erc20BuyableRate,
-            nativeSellInhibitor,
-            nativeBuyableRate
+            ec
         );
 
         newLP.noSupplyDeposit{value:msg.value}(msg.sender);
@@ -47,28 +44,25 @@ contract LindyFactory {
         emit NewLiquidityPool(
             asset,
             newLP,
-            erc20SellInhibitor, 
-            erc20BuyableRate,
-            nativeSellInhibitor,
-            nativeBuyableRate
+            /*
+            ec.erc20BuyableRate,
+            ec.erc20SellInhibitor, 
+            ec.nativeBuyableRate,
+            ec.nativeSellInhibitor,
+            */
+            ec
         );
     }
 
     /* ERC20 LP */
     function makeLiquidityPool(
         ERC20 asset, 
-        uint128 erc20SellInhibitor, 
-        uint128 erc20BuyableRate,
-        uint128 nativeSellInhibitor,
-        uint128 nativeBuyableRate,
+        ExchangeConfig memory ec,
         uint assets
     ) external payable returns (AquitardLP newLP) {
         newLP = new AquitardLP(
             asset,
-            erc20SellInhibitor, 
-            erc20BuyableRate,
-            nativeSellInhibitor,
-            nativeBuyableRate
+            ec
         );
 
         newLP.noSupplyDeposit{value:msg.value}(assets,msg.sender);
@@ -76,24 +70,14 @@ contract LindyFactory {
         emit NewLiquidityPool(
             asset,
             newLP,
-            erc20SellInhibitor, 
-            erc20BuyableRate,
-            nativeSellInhibitor,
-            nativeBuyableRate
+            /*
+            ec.erc20BuyableRate,
+            ec.erc20SellInhibitor, 
+            ec.nativeBuyableRate,
+            ec.nativeSellInhibitor,
+            */
+            ec
         );
     }
 
-/*
-    function makeNativeToERC20LP(ERC20 asset, uint128 availableRate, uint128 inhibitor, uint assets) external returns (NativeToERC20LP newLP) {
-        newLP = new NativeToERC20LP(asset, availableRate, inhibitor);
-        newLP.noSupplyDeposit(assets, msg.sender);
-        emit NewNativeToERC20LP(asset, newLP, availableRate, inhibitor);
-    }
-
-    function makeERC20ToNativeLP(ERC20 asset, uint128 availableRate, uint128 inhibitor) external payable returns (ERC20ToNativeLP newLP) {
-        newLP = new ERC20ToNativeLP(asset, availableRate, inhibitor);
-        newLP.noSupplyDeposit{value:msg.value}(msg.sender);
-        emit NewERC20ToNativeLP(asset, newLP, availableRate, inhibitor);
-    }
-  */  
 }

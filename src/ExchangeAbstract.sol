@@ -3,26 +3,31 @@ pragma solidity ^0.8.28;
 
 import "./SwapAbstract.sol";
 
+//NOTE struct is used to make it more explicit to reduce the parameters getting mixed up.
+struct ExchangeConfig {
+    uint128 erc20BuyableRate;
+    uint128 erc20SellInhibitor;
+    uint128 nativeBuyableRate;
+    uint128 nativeSellInhibitor;
+}
+
 abstract contract ExchangeAbstract is SwapAbstract {
     
-    uint128 public immutable erc20SellInhibitor;
     uint128 public immutable erc20BuyableRate;
-    uint128 public immutable nativeSellInhibitor;
+    uint128 public immutable erc20SellInhibitor;
     uint128 public immutable nativeBuyableRate;
+    uint128 public immutable nativeSellInhibitor;
     
     uint public erc20BuyableTime = block.timestamp;
     uint private _nativeBuyableTime = block.timestamp;
 
     constructor(
-        uint128 erc20SellInhibitor_, 
-        uint128 erc20BuyableRate_,
-        uint128 nativeSellInhibitor_,
-        uint128 nativeBuyableRate_
+        ExchangeConfig memory ec
     ) {
-        erc20SellInhibitor = erc20SellInhibitor_;
-        erc20BuyableRate = erc20BuyableRate_;
-        nativeSellInhibitor = nativeSellInhibitor_;
-        nativeBuyableRate = nativeBuyableRate_;
+        erc20BuyableRate = ec.erc20BuyableRate;
+        erc20SellInhibitor = ec.erc20SellInhibitor;
+        nativeBuyableRate = ec.nativeBuyableRate;
+        nativeSellInhibitor = ec.nativeSellInhibitor;
     }
 
     // nativesBuyable is better than buyableNatives because the later may be interpreted as an array

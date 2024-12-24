@@ -2,7 +2,8 @@
 pragma solidity ^0.8.28;
 
 import "https://github.com/Vectorized/solady/blob/main/src/tokens/ERC20.sol";
-import "./ERC223.sol";
+
+import "./ERC223L.sol";
 
 struct Permit2Sig {
     uint deadline;
@@ -52,7 +53,6 @@ abstract contract SwapAbstract {
         return 0x8943ec02;
     }
 
-
     // msg.sender Defaults
     function swapERC20ToNative(uint erc20sSold) public returns (uint nativesBought) {
         return swapERC20ToNative(erc20sSold, msg.sender);
@@ -99,10 +99,10 @@ abstract contract SwapAbstract {
 
     // If the token is the same as sa, do not use this because it'll prevent a burn. instead just use the
     // erc20 version.
-    function swapERC223ToNative(SwapAbstract sa, uint erc20sSold, address to) external returns (uint erc20sEarned) {
+    function swapERC223LToNative(SwapAbstract sa, uint erc20sSold, address to) external returns (uint erc20sEarned) {
         uint startBalance = address(this).balance;
 
-        ERC223(address(asset)).transfer(address(sa),erc20sSold,"");
+        ERC223L(address(asset)).transfer(address(sa),erc20sSold,"");
 
         erc20sEarned = nativeToERC20Price(address(this).balance - startBalance) - erc20sSold;
 

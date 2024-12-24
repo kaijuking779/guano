@@ -49,16 +49,15 @@
 		},
 		"gasEstimates": null,
 		"methodIdentifiers": {
-			"_constantNameHash()": "914a18d3",
 			"asset()": "38d52e0f",
-			"getERC20ToNativePrice(uint256)": "25d1782d",
-			"getNativeToERC20Price(uint256)": "ea6b80b7",
+			"erc20ToNativePrice(uint256)": "4206abe9",
+			"nativeToERC20Price(uint256)": "7b383f18",
 			"swapERC20ToNative(address,uint256,address)": "17b31167",
 			"swapERC20ToNative(uint256)": "6032f600",
 			"swapERC20ToNative(uint256,(uint256,uint8,bytes32,bytes32))": "6263913c",
 			"swapERC20ToNative(uint256,address)": "b3841f26",
 			"swapERC20ToNative(uint256,address,(uint256,uint8,bytes32,bytes32))": "94ef2103",
-			"swapERC223ToNative(address,uint256,address)": "af4fc206",
+			"swapERC223LToNative(address,uint256,address)": "fc028523",
 			"swapNativeToERC20()": "223ecf7e",
 			"swapNativeToERC20(address)": "12958a6b",
 			"swapNativeToERC20(address,uint256,address)": "e5aca599",
@@ -66,19 +65,6 @@
 		}
 	},
 	"abi": [
-		{
-			"inputs": [],
-			"name": "_constantNameHash",
-			"outputs": [
-				{
-					"internalType": "bytes32",
-					"name": "",
-					"type": "bytes32"
-				}
-			],
-			"stateMutability": "view",
-			"type": "function"
-		},
 		{
 			"inputs": [],
 			"name": "asset",
@@ -100,7 +86,7 @@
 					"type": "uint256"
 				}
 			],
-			"name": "getERC20ToNativePrice",
+			"name": "erc20ToNativePrice",
 			"outputs": [
 				{
 					"internalType": "uint256",
@@ -119,7 +105,7 @@
 					"type": "uint256"
 				}
 			],
-			"name": "getNativeToERC20Price",
+			"name": "nativeToERC20Price",
 			"outputs": [
 				{
 					"internalType": "uint256",
@@ -317,7 +303,7 @@
 					"type": "address"
 				}
 			],
-			"name": "swapERC223ToNative",
+			"name": "swapERC223LToNative",
 			"outputs": [
 				{
 					"internalType": "uint256",

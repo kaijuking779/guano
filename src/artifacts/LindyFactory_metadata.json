@@ -21,28 +21,32 @@
 						"type": "address"
 					},
 					{
+						"components": [
+							{
+								"internalType": "uint128",
+								"name": "erc20BuyableRate",
+								"type": "uint128"
+							},
+							{
+								"internalType": "uint128",
+								"name": "erc20SellInhibitor",
+								"type": "uint128"
+							},
+							{
+								"internalType": "uint128",
+								"name": "nativeBuyableRate",
+								"type": "uint128"
+							},
+							{
+								"internalType": "uint128",
+								"name": "nativeSellInhibitor",
+								"type": "uint128"
+							}
+						],
 						"indexed": false,
-						"internalType": "uint128",
-						"name": "erc20Inhibitor",
-						"type": "uint128"
-					},
-					{
-						"indexed": false,
-						"internalType": "uint128",
-						"name": "erc20PurchasableRate",
-						"type": "uint128"
-					},
-					{
-						"indexed": false,
-						"internalType": "uint128",
-						"name": "nativeInhibitor",
-						"type": "uint128"
-					},
-					{
-						"indexed": false,
-						"internalType": "uint128",
-						"name": "nativePurchasableRate",
-						"type": "uint128"
+						"internalType": "struct ExchangeConfig",
+						"name": "ec",
+						"type": "tuple"
 					}
 				],
 				"name": "NewLiquidityPool",
@@ -75,24 +79,36 @@
 						"type": "address"
 					},
 					{
-						"internalType": "uint128",
-						"name": "erc20Inhibitor",
-						"type": "uint128"
+						"components": [
+							{
+								"internalType": "uint128",
+								"name": "erc20BuyableRate",
+								"type": "uint128"
+							},
+							{
+								"internalType": "uint128",
+								"name": "erc20SellInhibitor",
+								"type": "uint128"
+							},
+							{
+								"internalType": "uint128",
+								"name": "nativeBuyableRate",
+								"type": "uint128"
+							},
+							{
+								"internalType": "uint128",
+								"name": "nativeSellInhibitor",
+								"type": "uint128"
+							}
+						],
+						"internalType": "struct ExchangeConfig",
+						"name": "ec",
+						"type": "tuple"
 					},
 					{
-						"internalType": "uint128",
-						"name": "erc20PurchasableRate",
-						"type": "uint128"
-					},
-					{
-						"internalType": "uint128",
-						"name": "nativeInhibitor",
-						"type": "uint128"
-					},
-					{
-						"internalType": "uint128",
-						"name": "nativePurchasableRate",
-						"type": "uint128"
+						"internalType": "uint256",
+						"name": "assets",
+						"type": "uint256"
 					}
 				],
 				"name": "makeLiquidityPool",
@@ -114,29 +130,31 @@
 						"type": "address"
 					},
 					{
-						"internalType": "uint128",
-						"name": "erc20Inhibitor",
-						"type": "uint128"
-					},
-					{
-						"internalType": "uint128",
-						"name": "erc20PurchasableRate",
-						"type": "uint128"
-					},
-					{
-						"internalType": "uint128",
-						"name": "nativeInhibitor",
-						"type": "uint128"
-					},
-					{
-						"internalType": "uint128",
-						"name": "nativePurchasableRate",
-						"type": "uint128"
-					},
-					{
-						"internalType": "uint256",
-						"name": "assets",
-						"type": "uint256"
+						"components": [
+							{
+								"internalType": "uint128",
+								"name": "erc20BuyableRate",
+								"type": "uint128"
+							},
+							{
+								"internalType": "uint128",
+								"name": "erc20SellInhibitor",
+								"type": "uint128"
+							},
+							{
+								"internalType": "uint128",
+								"name": "nativeBuyableRate",
+								"type": "uint128"
+							},
+							{
+								"internalType": "uint128",
+								"name": "nativeSellInhibitor",
+								"type": "uint128"
+							}
+						],
+						"internalType": "struct ExchangeConfig",
+						"name": "ec",
+						"type": "tuple"
 					}
 				],
 				"name": "makeLiquidityPool",
@@ -234,51 +252,51 @@
 			]
 		},
 		"src/AquitardLP.0.0.1.sol": {
-			"keccak256": "0x9d348035217384f67761bdc9c3664627a3ddcdd7bbae55625df0059131a30d37",
+			"keccak256": "0x90ce5faeb26ae1cc789db96f5e97020f7a38f5aaeee7d9215cf48e5646333674",
 			"license": "GPL-3.0-or-later",
 			"urls": [
-				"bzz-raw://e5a70090083f0d451885cb9a84fba94e4286a9a257fddaa43b00443f39abe3cb",
-				"dweb:/ipfs/QmbSAZ4GSdG2ghSf4bdUB7UM1op6iPxdFAgXcqJVkuwdEp"
+				"bzz-raw://84f92d92056b015ffdd6a92ee09d1fba2e695276b51c95472ef45c4a0e698aae",
+				"dweb:/ipfs/QmXtqcbbM8CNNFV856NkRLWwNUXhYoo1QVGCCdAsnPiKsj"
 			]
 		},
-		"src/ERC223.sol": {
-			"keccak256": "0x2479340fcf249ff8fc1ae63db370c5c3ad56adcd332b289e99b228e191b63d7d",
+		"src/ERC223L.sol": {
+			"keccak256": "0x8d35ba2629dc6aaf2f4fdcbeae764ec62014ba08c87c6b90c4adc97e3a30bf95",
 			"license": "GPL-3.0-or-later",
 			"urls": [
-				"bzz-raw://1828bc6ee9897e6d7175d3637d5604ac6584c933827ae9bd8b691e0ed2cca769",
-				"dweb:/ipfs/QmbE2xHNwy8gwS3f9fDTGTcqNfC3W9kmXx9YqLa2jRXXiV"
+				"bzz-raw://9cf5c85fa80983b9c03d75007ed53d08079c70103533fd10b419ed54bdfedec0",
+				"dweb:/ipfs/QmQCMMmvMgsh772xBhdeTSer1GcXifDiBdKVnoUSvmZXsm"
 			]
 		},
 		"src/ExchangeAbstract.sol": {
-			"keccak256": "0x6a757201b911275266db56da33e7020b066f5e6b9ac8a3a5d5c7b69fd1e996f6",
+			"keccak256": "0xec1cad683630e7b3d2ac16eda3fe5eb7c7c49557cf8b50154084e55d2d746d09",
 			"license": "GPL-3.0-or-later",
 			"urls": [
-				"bzz-raw://2217ae0041b3515f3d311752290e195f73a2572cb0a6dc1ae3491ef54fb8314a",
-				"dweb:/ipfs/QmRXyCXB8X8Qm5J3NWVT1jgvRsTkMoQddgH8isW7wgqNRn"
+				"bzz-raw://d7ed8679ff117c72e641046cd0dbc922d7a27093dc68161ca41e2e1e8567cb48",
+				"dweb:/ipfs/Qma7G6BFLYr6HxvXjWCzE6XTcRsTcoLMaH9fgNqoczwaom"
 			]
 		},
 		"src/LindyFactory.sol": {
-			"keccak256": "0x9318117040e3e3d3d3ee8c6a68eb5510b2ec4f0dd5675bc0e05eacb90de7d81e",
+			"keccak256": "0x6ecaec1c79d81e64ccf35be144a84bf99a6e670c70bf7dbd7c29a6bfb9756ed3",
 			"license": "GPL-3.0-or-later",
 			"urls": [
-				"bzz-raw://ad033571b6b6a09155e371f642ad4ed9dabc2b9ccce49942d698ec126445c466",
-				"dweb:/ipfs/Qmeyv8pozrqo1dSmHkd7xZ92NwKVtA9vWt1jF7mWKbU3Ps"
+				"bzz-raw://23bc771af336b9744f347521bc30b1b0b4d97155d26e23e89c6eef718885a4de",
+				"dweb:/ipfs/QmVbKq1yhxfGHfUizLKFQfzvWLAp5zodN9PuuSXpex7hsK"
 			]
 		},
 		"src/PinusVault.sol": {
-			"keccak256": "0xd10731c534ae65444a88d0109b02ab08a4cc007d184c943d22fe3fd2d7712a42",
+			"keccak256": "0x31c74398b3c1738d7e1ae7b8e1c1152521881f9c1fc62acea045b50ca3292a7c",
 			"license": "GPL-3.0-or-later",
 			"urls": [
-				"bzz-raw://eb452cd76d974c844570f6d53de10be7b2d4c143d573e72b75e8dc486467256f",
-				"dweb:/ipfs/QmRDKJbh4CQy6odHpQsaAYuF7wf26dBepGGZASJaNJ3VMB"
+				"bzz-raw://2e8428233d20c71b4b60aff60dd423d6d49f71b28d93e33818da2a759ffb9dee",
+				"dweb:/ipfs/QmNP3QLfUjfbpeRYvaPCZrXrNVovEQtTcuT3oBUoGpqtEm"
 			]
 		},
 		"src/SwapAbstract.sol": {
-			"keccak256": "0x83c28ebefdb56b5d94cc056d0fbfe53a4a63024f544677265da17d9eaf45f962",
+			"keccak256": "0xc6e79fbf9f9a6869b4e2a5df3d28758962f2075d620cd050941f56b811308ad7",
 			"license": "GPL-3.0-or-later",
 			"urls": [
-				"bzz-raw://adf86c6316348330d54c7ff9402732225966e1bc5aaede95650d88cb9d3ee9b3",
-				"dweb:/ipfs/QmdUawoaXU78ahcYx8RDoB1FTth2VHqpUQNNX64Voyb7FR"
+				"bzz-raw://283cb4bb302ab49b88c2b21b92e81b59d7722d35934feafbd1005f10686e7f06",
+				"dweb:/ipfs/Qmdp3UexkWKLafpTgCeSCJbcWYocH1yzQihRnuwzvQiSMx"
 			]
 		}
 	},

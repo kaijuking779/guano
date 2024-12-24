@@ -7,19 +7,6 @@
 		"abi": [
 			{
 				"inputs": [],
-				"name": "_constantNameHash",
-				"outputs": [
-					{
-						"internalType": "bytes32",
-						"name": "",
-						"type": "bytes32"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
 				"name": "asset",
 				"outputs": [
 					{
@@ -39,7 +26,7 @@
 						"type": "uint256"
 					}
 				],
-				"name": "getERC20ToNativePrice",
+				"name": "erc20ToNativePrice",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -58,7 +45,7 @@
 						"type": "uint256"
 					}
 				],
-				"name": "getNativeToERC20Price",
+				"name": "nativeToERC20Price",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -256,7 +243,7 @@
 						"type": "address"
 					}
 				],
-				"name": "swapERC223ToNative",
+				"name": "swapERC223LToNative",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -400,20 +387,20 @@
 				"dweb:/ipfs/QmZ1zC91VhPHMXAdcY8SahJMwDsC2B5q9uXFF16R5eHmkV"
 			]
 		},
-		"src/ERC223.sol": {
-			"keccak256": "0x2479340fcf249ff8fc1ae63db370c5c3ad56adcd332b289e99b228e191b63d7d",
+		"src/ERC223L.sol": {
+			"keccak256": "0x8d35ba2629dc6aaf2f4fdcbeae764ec62014ba08c87c6b90c4adc97e3a30bf95",
 			"license": "GPL-3.0-or-later",
 			"urls": [
-				"bzz-raw://1828bc6ee9897e6d7175d3637d5604ac6584c933827ae9bd8b691e0ed2cca769",
-				"dweb:/ipfs/QmbE2xHNwy8gwS3f9fDTGTcqNfC3W9kmXx9YqLa2jRXXiV"
+				"bzz-raw://9cf5c85fa80983b9c03d75007ed53d08079c70103533fd10b419ed54bdfedec0",
+				"dweb:/ipfs/QmQCMMmvMgsh772xBhdeTSer1GcXifDiBdKVnoUSvmZXsm"
 			]
 		},
 		"src/SwapAbstract.sol": {
-			"keccak256": "0x15021a35901c10badb1a3b9b4e4694d1d23ee7a83bae8c2bdfb5850d9bd9fc89",
+			"keccak256": "0xc6e79fbf9f9a6869b4e2a5df3d28758962f2075d620cd050941f56b811308ad7",
 			"license": "GPL-3.0-or-later",
 			"urls": [
-				"bzz-raw://ed6a3af65a321ad8630501e0420bd30ac492a895f1cacf7992a50d89a7e1b986",
-				"dweb:/ipfs/QmShGwrTmXQr25tmT73eExaP4Z5r56GygRjackTSod2WNb"
+				"bzz-raw://283cb4bb302ab49b88c2b21b92e81b59d7722d35934feafbd1005f10686e7f06",
+				"dweb:/ipfs/Qmdp3UexkWKLafpTgCeSCJbcWYocH1yzQihRnuwzvQiSMx"
 			]
 		}
 	},

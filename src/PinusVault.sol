@@ -31,15 +31,20 @@ deposit() and redeem() are missing transfers to an address aside from the sender
 
 
 
-uint128 constant ERC20_SELL_INHIBITOR = 1 ether;
 uint128 constant ERC20_BUYABLE_RATE = 1 ether / uint128(24 hours);
-uint128 constant NATIVE_SELL_INHIBITOR = .1 ether;
+uint128 constant ERC20_SELL_INHIBITOR = 1 ether;
 uint128 constant NATIVE_BUYABLE_RATE = .1 ether / uint128(24 hours);
+uint128 constant NATIVE_SELL_INHIBITOR = .1 ether;
 
 contract PinusVault 
     is 
-    ExchangeAbstract(ERC20_SELL_INHIBITOR,ERC20_BUYABLE_RATE,NATIVE_SELL_INHIBITOR,NATIVE_BUYABLE_RATE), 
-    ERC223, 
+    ExchangeAbstract(ExchangeConfig({
+        erc20BuyableRate : ERC20_BUYABLE_RATE,
+        erc20SellInhibitor : ERC20_SELL_INHIBITOR,
+        nativeBuyableRate : NATIVE_BUYABLE_RATE,
+        nativeSellInhibitor : NATIVE_SELL_INHIBITOR
+        })), 
+    ERC223L, 
     Ownable 
 {
 
