@@ -6,27 +6,21 @@ pragma solidity ^0.8.28;
 
 //https://docs.soliditylang.org/en/latest/style-guide.html#naming-conventions
 
-import "./PinusVault.sol";
+import "./PinusToken.sol";
 import "./AquitardLP.0.0.1.sol";
 
 contract LindyFactory {
-    event NewVault(address indexed creator, PinusVault newVault);
+    event NewToken(address indexed creator, PinusToken newToken);
 
     event NewLiquidityPool(
         ERC20 indexed asset, 
-        AquitardLP liquidityPool, 
-        /*
-        uint128 erc20BuyableRate,
-        uint128 erc20SellInhibitor, 
-        uint128 nativeBuyableRate,
-        uint128 nativeSellInhibitor,
-        */
+        AquitardLP liquidityPool,
         ExchangeConfig ec
         );
 
-    function makeVault(string memory name, string memory symbol) external returns (PinusVault newVault) {
-        newVault = new PinusVault(msg.sender,name,symbol);
-        emit NewVault(msg.sender,newVault);
+    function makeToken(string memory name, string memory symbol) external returns (PinusToken newToken) {
+        newToken = new PinusToken(msg.sender,name,symbol);
+        emit NewToken(msg.sender,newToken);
     }
 
     /* Native Token LP */
@@ -44,12 +38,6 @@ contract LindyFactory {
         emit NewLiquidityPool(
             asset,
             newLP,
-            /*
-            ec.erc20BuyableRate,
-            ec.erc20SellInhibitor, 
-            ec.nativeBuyableRate,
-            ec.nativeSellInhibitor,
-            */
             ec
         );
     }
@@ -70,12 +58,6 @@ contract LindyFactory {
         emit NewLiquidityPool(
             asset,
             newLP,
-            /*
-            ec.erc20BuyableRate,
-            ec.erc20SellInhibitor, 
-            ec.nativeBuyableRate,
-            ec.nativeSellInhibitor,
-            */
             ec
         );
     }

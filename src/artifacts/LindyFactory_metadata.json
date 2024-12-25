@@ -63,12 +63,12 @@
 					},
 					{
 						"indexed": false,
-						"internalType": "contract PinusVault",
-						"name": "newVault",
+						"internalType": "contract PinusToken",
+						"name": "newToken",
 						"type": "address"
 					}
 				],
-				"name": "NewVault",
+				"name": "NewToken",
 				"type": "event"
 			},
 			{
@@ -181,11 +181,11 @@
 						"type": "string"
 					}
 				],
-				"name": "makeVault",
+				"name": "makeToken",
 				"outputs": [
 					{
-						"internalType": "contract PinusVault",
-						"name": "newVault",
+						"internalType": "contract PinusToken",
+						"name": "newToken",
 						"type": "address"
 					}
 				],
@@ -252,11 +252,11 @@
 			]
 		},
 		"src/AquitardLP.0.0.1.sol": {
-			"keccak256": "0x90ce5faeb26ae1cc789db96f5e97020f7a38f5aaeee7d9215cf48e5646333674",
+			"keccak256": "0xcbafb45860c108b5350361332060ff109ccc2ed2ecbcd6afdf418380e33f8690",
 			"license": "GPL-3.0-or-later",
 			"urls": [
-				"bzz-raw://84f92d92056b015ffdd6a92ee09d1fba2e695276b51c95472ef45c4a0e698aae",
-				"dweb:/ipfs/QmXtqcbbM8CNNFV856NkRLWwNUXhYoo1QVGCCdAsnPiKsj"
+				"bzz-raw://29e96f69449d8239efb747a0468188a7592deba40f030afe374d361308233676",
+				"dweb:/ipfs/QmUukVQtH9DTRHu1MtDCzmyYZNQsdagPEc7vK7PenYSmAX"
 			]
 		},
 		"src/ERC223L.sol": {
@@ -276,19 +276,19 @@
 			]
 		},
 		"src/LindyFactory.sol": {
-			"keccak256": "0x6ecaec1c79d81e64ccf35be144a84bf99a6e670c70bf7dbd7c29a6bfb9756ed3",
+			"keccak256": "0xc627dfe787a2eff35eefc17b9acef2b221f9e1d3137d783bef9fb33044f07d9f",
 			"license": "GPL-3.0-or-later",
 			"urls": [
-				"bzz-raw://23bc771af336b9744f347521bc30b1b0b4d97155d26e23e89c6eef718885a4de",
-				"dweb:/ipfs/QmVbKq1yhxfGHfUizLKFQfzvWLAp5zodN9PuuSXpex7hsK"
+				"bzz-raw://4593ab21b1c3edd67128817399ea5d280bfeaf49d6828e26220181f412c68e17",
+				"dweb:/ipfs/QmemT8n4uJAWxNvwzbaVgS8nVDj2B8hJf2XsJdg76eAe8Q"
 			]
 		},
-		"src/PinusVault.sol": {
-			"keccak256": "0x31c74398b3c1738d7e1ae7b8e1c1152521881f9c1fc62acea045b50ca3292a7c",
+		"src/PinusToken.sol": {
+			"keccak256": "0xa62aa9139dfa0cf395dae8a29d5824819cac9b752055c867d326064d4656300b",
 			"license": "GPL-3.0-or-later",
 			"urls": [
-				"bzz-raw://2e8428233d20c71b4b60aff60dd423d6d49f71b28d93e33818da2a759ffb9dee",
-				"dweb:/ipfs/QmNP3QLfUjfbpeRYvaPCZrXrNVovEQtTcuT3oBUoGpqtEm"
+				"bzz-raw://b2ff40101995bd713cb220e733d08a27e32cab4faddfd9a42a5c0a41e55f5907",
+				"dweb:/ipfs/QmNTW8ZKfoky1y2Gnr4eEpVPpxzyAD7479UYd9bN2vFi99"
 			]
 		},
 		"src/SwapAbstract.sol": {
