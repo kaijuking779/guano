@@ -6,11 +6,11 @@ import "https://github.com/Dexaran/ERC223-token-standard/blob/development/token/
 
 abstract contract ERC223L is ERC20 {
 
-    function transfer(address _to, uint _value, bytes calldata _data) public returns (bool success)
+    function transfer(address to, uint value, bytes calldata data) public returns (bool success)
     {
-        transfer(_to, _value);
+        transfer(to, value);
 
-        IERC223Recipient(_to).tokenReceived(msg.sender, _value, _data);
+        IERC223Recipient(to).tokenReceived(msg.sender, value, data);
 
         return true;
     }

@@ -56,7 +56,7 @@ contract AquitardLP is ExchangeAbstract, ERC223L {
         _transferNativesBought(to, nativesBought);
     }
     
-    //WARNING DO NOT use this one if assets == 0.
+    //WARNING DO NOT use this one if erc20sDeposited == 0.
     function noSupplyDeposit(uint erc20sDeposited, address to) payable external returns (uint shares) {
         shares = erc20sDeposited;
         // Checks
@@ -96,10 +96,10 @@ contract AquitardLP is ExchangeAbstract, ERC223L {
         uint diff = msg.value - natives;
 
         // Effects
-        _mint(receiver,shares);
+        asset.transferFrom(msg.sender, address(this), erc20s);
+        _mint(receiver, shares);
 
         // Interactions
-        asset.transferFrom(msg.sender,address(this), erc20s);
         
         if(diff > 0) {
             (bool success,) = receiver.call{value: diff}("");
@@ -121,11 +121,11 @@ contract AquitardLP is ExchangeAbstract, ERC223L {
         
         /* Checks */
         /* Effects */
+        
+        asset.transferFrom(msg.sender, address(this), erc20s);
         _mint(receiver, shares);
 
         /* Interactions */
-        asset.transferFrom(msg.sender, address(this), erc20s);
-        
         
         emit Deposit(msg.sender, receiver, erc20s, msg.value, shares);
     }
@@ -165,8 +165,8 @@ contract AquitardLP is ExchangeAbstract, ERC223L {
     }
 
     // If for whatever reason, the ERC20 asset can't be transferred, this allows you to at least redeem the ETH
-    // WARNING This means you will be giving up any ERC20 asset that you were suppose to receive forever even
-    // if in the future the issue is fixed. This function DOES NOT transfer more native tokens than
+    // WARNING This means you will be giving up any ERC20 asset that you were suppose to receive. 
+    // This function DOES NOT transfer more native tokens than
     // then a normal redeem() would have.
     function redeemNativesOnly(uint shares, address receiver, address owner) external returns (uint natives) {
 
