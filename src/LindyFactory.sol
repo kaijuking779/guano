@@ -46,14 +46,14 @@ contract LindyFactory {
     function makeLiquidityPool(
         ERC20 asset, 
         ExchangeConfig memory ec,
-        uint assets
+        uint erc20sDeposited
     ) external payable returns (AquitardLP newLP) {
         newLP = new AquitardLP(
             asset,
             ec
         );
 
-        newLP.noSupplyDeposit{value:msg.value}(assets,msg.sender);
+        newLP.noSupplyDeposit{value:msg.value}(erc20sDeposited,msg.sender);
 
         emit NewLiquidityPool(
             asset,

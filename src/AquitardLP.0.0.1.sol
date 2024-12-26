@@ -13,8 +13,8 @@ Although this is a ERC20<>Native Vault, we are NOT using ERC7575.
 
 
 contract AquitardLP is ExchangeAbstract, ERC223L {
-    event Deposit(address indexed sender, address indexed owner, uint assets, uint natives, uint shares);
-    event Withdraw(address indexed sender, address indexed receiver, address indexed owner, uint assets, uint natives, uint shares);
+    event Deposit(address indexed sender, address indexed owner, uint erc20sDeposited, uint nativesDeposited, uint shares);
+    event Withdraw(address indexed sender, address indexed receiver, address indexed owner, uint erc20sWithdrawn, uint nativesWithdrawn, uint shares);
 
     constructor(ERC20 asset, ExchangeConfig memory ec) 
     ExchangeAbstract(ec) 
@@ -57,15 +57,15 @@ contract AquitardLP is ExchangeAbstract, ERC223L {
     }
     
     //WARNING DO NOT use this one if assets == 0.
-    function noSupplyDeposit(uint assets, address to) payable external returns (uint shares) {
-        shares = assets;
+    function noSupplyDeposit(uint erc20sDeposited, address to) payable external returns (uint shares) {
+        shares = erc20sDeposited;
         // Checks
         require(totalSupply() == 0);
         // Effects
         _mint(to, shares);
         // Interactions
-        asset.transferFrom(msg.sender, address(this), assets);
-        emit Deposit(msg.sender, to, assets, msg.value, shares);
+        asset.transferFrom(msg.sender, address(this), erc20sDeposited);
+        emit Deposit(msg.sender, to, erc20sDeposited, msg.value, shares);
     }
 
     //WARNING DO NOT use this one if msg.value == 0
@@ -76,21 +76,21 @@ contract AquitardLP is ExchangeAbstract, ERC223L {
         emit Deposit(msg.sender, to, 0, msg.value, shares);
     }
 
-    function convertToShares(uint assets) public view returns (uint) {
-        return totalSupply() * assets / asset.balanceOf(address(this));
+    function convertToShares(uint erc20s) public view returns (uint) {
+        return totalSupply() * erc20s / asset.balanceOf(address(this));
     }
 
-    function previewDeposit(uint assets) public view returns (uint) {
-        return convertToShares(assets);
+    function previewDeposit(uint erc20s) public view returns (uint) {
+        return convertToShares(erc20s);
     }
     
     // This will fail if there's no assets. Use the other deposit() for that case.
     // The other one is more ideal because less arguments and don't have to worry about sending
     // too many or too little native tokens.
     // DO NOT USE if asset balance is 0. Native balance may be 0.
-    function deposit(uint assets, address receiver) payable public returns (uint shares) {
-        shares = previewDeposit(assets);
-        uint natives = (address(this).balance - msg.value) * assets / asset.balanceOf(address(this));
+    function deposit(uint erc20s, address receiver) payable public returns (uint shares) {
+        shares = previewDeposit(erc20s);
+        uint natives = (address(this).balance - msg.value) * erc20s / asset.balanceOf(address(this));
 
         // Checks
         uint diff = msg.value - natives;
@@ -99,14 +99,14 @@ contract AquitardLP is ExchangeAbstract, ERC223L {
         _mint(receiver,shares);
 
         // Interactions
-        asset.transferFrom(msg.sender,address(this),assets);
+        asset.transferFrom(msg.sender,address(this), erc20s);
         
         if(diff > 0) {
             (bool success,) = receiver.call{value: diff}("");
             require(success);
         }
 
-        emit Deposit(msg.sender, receiver, assets, natives, shares);
+        emit Deposit(msg.sender, receiver, erc20s, natives, shares);
     }
 
     /* 
@@ -117,40 +117,43 @@ contract AquitardLP is ExchangeAbstract, ERC223L {
     */
     function deposit(address receiver) payable public returns (uint shares) {
         shares = totalSupply() * msg.value / (address(this).balance - msg.value);
-        uint assets = asset.balanceOf(address(this)) * msg.value / (address(this).balance - msg.value);
+        uint erc20s = asset.balanceOf(address(this)) * msg.value / (address(this).balance - msg.value);
         
         /* Checks */
         /* Effects */
         _mint(receiver, shares);
 
         /* Interactions */
-        asset.transferFrom(msg.sender,address(this),assets);
+        asset.transferFrom(msg.sender, address(this), erc20s);
         
         
-        emit Deposit(msg.sender, receiver, assets, msg.value, shares);
+        emit Deposit(msg.sender, receiver, erc20s, msg.value, shares);
     }
 
-    function convertToAssets(uint shares) public view returns (uint) {
-        return asset.balanceOf(address(this)) * shares / totalSupply();
+    function convertToAssets(uint shares) public view returns (uint erc20s, uint natives) {
+        return (
+            asset.balanceOf(address(this)) * shares / totalSupply(),
+            address(this).balance * shares / totalSupply()
+        );
     }
 
-    function previewRedeem(uint shares) public view returns (uint) {
+    function previewRedeem(uint shares) public view returns (uint erc20s, uint natives) {
         return convertToAssets(shares);
     }
 
-    function redeem(uint shares, address receiver, address owner) external returns (uint assets) {
-        assets = previewRedeem(shares);
+    function redeem(uint shares, address receiver, address owner) external returns (uint erc20s, uint natives) {
+        (erc20s, natives) = previewRedeem(shares);
 
         /* Checks */
         /* Effects */
         if(msg.sender!=owner) _spendAllowance(owner, msg.sender, shares);
-        uint natives = address(this).balance * shares / totalSupply();
+
         _burn(owner,shares);
         
         /* Interactions */
         //REENTRANCY PROTECTION - VERY IMPORTANT THAT BURN HAPPENS BEFORE SENDING ETH
-        if(assets>0){
-            asset.transfer(receiver,assets);
+        if(erc20s>0){
+            asset.transfer(receiver, erc20s);
         }
 
         if(natives>0) {
@@ -158,23 +161,22 @@ contract AquitardLP is ExchangeAbstract, ERC223L {
             require(success);
         }
 
-        emit Withdraw(msg.sender, receiver, owner, assets, natives, shares);
+        emit Withdraw(msg.sender, receiver, owner, erc20s, natives, shares);
     }
 
     // If for whatever reason, the ERC20 asset can't be transferred, this allows you to at least redeem the ETH
     // WARNING This means you will be giving up any ERC20 asset that you were suppose to receive forever even
     // if in the future the issue is fixed. This function DOES NOT transfer more native tokens than
     // then a normal redeem() would have.
-    function redeemNativesOnly(uint shares, address receiver, address owner) external returns (uint assets) {
-        assets = 0;
+    function redeemNativesOnly(uint shares, address receiver, address owner) external returns (uint natives) {
 
         if(msg.sender!=owner) _spendAllowance(owner, msg.sender, shares);
-        uint natives = address(this).balance * shares / totalSupply();
+        natives = address(this).balance * shares / totalSupply();
         _burn(owner,shares);
 
         (bool success,) = receiver.call{value: natives}("");
         require(success);
 
-        emit Withdraw(msg.sender, receiver, owner, assets, natives, shares);
+        emit Withdraw(msg.sender, receiver, owner, 0, natives, shares);
     }
 }
