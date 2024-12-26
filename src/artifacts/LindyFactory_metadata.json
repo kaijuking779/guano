@@ -66,6 +66,18 @@
 						"internalType": "contract PinusToken",
 						"name": "newToken",
 						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "symbol",
+						"type": "string"
 					}
 				],
 				"name": "NewToken",
@@ -276,11 +288,11 @@
 			]
 		},
 		"src/LindyFactory.sol": {
-			"keccak256": "0xc627dfe787a2eff35eefc17b9acef2b221f9e1d3137d783bef9fb33044f07d9f",
+			"keccak256": "0xeff55bb55f46bdf67f8a39e8aa6c19505f216b7c97c9b1fa53854659b07d8608",
 			"license": "GPL-3.0-or-later",
 			"urls": [
-				"bzz-raw://4593ab21b1c3edd67128817399ea5d280bfeaf49d6828e26220181f412c68e17",
-				"dweb:/ipfs/QmemT8n4uJAWxNvwzbaVgS8nVDj2B8hJf2XsJdg76eAe8Q"
+				"bzz-raw://50cadbda832e161995bfb019a40219bbc65ef94aafae271e2397ea837c5a98ca",
+				"dweb:/ipfs/QmQzFtEPn2Aae2BVwuAFHtsLDBe1nucA7CiqorzYdq86kX"
 			]
 		},
 		"src/PinusToken.sol": {

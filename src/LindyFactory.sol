@@ -10,7 +10,7 @@ import "./PinusToken.sol";
 import "./AquitardLP.0.0.1.sol";
 
 contract LindyFactory {
-    event NewToken(address indexed creator, PinusToken newToken);
+    event NewToken(address indexed creator, PinusToken newToken, string name, string symbol);
 
     event NewLiquidityPool(
         ERC20 indexed asset, 
@@ -20,7 +20,7 @@ contract LindyFactory {
 
     function makeToken(string memory name, string memory symbol) external returns (PinusToken newToken) {
         newToken = new PinusToken(msg.sender,name,symbol);
-        emit NewToken(msg.sender,newToken);
+        emit NewToken(msg.sender, newToken, name, symbol);
     }
 
     /* Native Token LP */
