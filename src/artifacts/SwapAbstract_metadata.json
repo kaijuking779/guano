@@ -10,7 +10,7 @@
 				"name": "asset",
 				"outputs": [
 					{
-						"internalType": "contract ERC20",
+						"internalType": "contract ERC223L",
 						"name": "",
 						"type": "address"
 					}
@@ -319,6 +319,30 @@
 				"inputs": [
 					{
 						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "swapNativeToERC223L",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "erc20sBought",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
 						"name": "from",
 						"type": "address"
 					},
@@ -396,11 +420,11 @@
 			]
 		},
 		"src/SwapAbstract.sol": {
-			"keccak256": "0xc6e79fbf9f9a6869b4e2a5df3d28758962f2075d620cd050941f56b811308ad7",
+			"keccak256": "0xdabe148fba6dba2f3a9ce20af0372ce5f87ef3b196d5c70e1781d9cdb02997c9",
 			"license": "GPL-3.0-or-later",
 			"urls": [
-				"bzz-raw://283cb4bb302ab49b88c2b21b92e81b59d7722d35934feafbd1005f10686e7f06",
-				"dweb:/ipfs/Qmdp3UexkWKLafpTgCeSCJbcWYocH1yzQihRnuwzvQiSMx"
+				"bzz-raw://071d78092f4ef75a3d813a194bbe587255991a29751f576e1a094769c68f1f55",
+				"dweb:/ipfs/QmdYsLQurdvtBKvAZyTWFVSEXA3BdxUdex6AuKrz18oTvz"
 			]
 		}
 	},

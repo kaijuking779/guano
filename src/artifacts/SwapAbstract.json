@@ -61,6 +61,7 @@
 			"swapNativeToERC20()": "223ecf7e",
 			"swapNativeToERC20(address)": "12958a6b",
 			"swapNativeToERC20(address,uint256,address)": "e5aca599",
+			"swapNativeToERC223L(address,bytes)": "03b08ea7",
 			"tokenReceived(address,uint256,bytes)": "8943ec02"
 		}
 	},
@@ -70,7 +71,7 @@
 			"name": "asset",
 			"outputs": [
 				{
-					"internalType": "contract ERC20",
+					"internalType": "contract ERC223L",
 					"name": "",
 					"type": "address"
 				}
@@ -373,6 +374,30 @@
 				}
 			],
 			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "to",
+					"type": "address"
+				},
+				{
+					"internalType": "bytes",
+					"name": "data",
+					"type": "bytes"
+				}
+			],
+			"name": "swapNativeToERC223L",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "erc20sBought",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "payable",
 			"type": "function"
 		},
 		{

@@ -81,10 +81,7 @@ contract PinusToken
     }
 
     function _transferERC20sBought(address to, uint erc20sBought) internal override {
-        // Effects
         erc20BuyableTime += erc20sBought / erc20BuyableRate;
-
-        // Interactions
         _mint(to, erc20sBought);
     }
 

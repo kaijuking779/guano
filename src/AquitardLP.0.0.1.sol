@@ -43,10 +43,7 @@ contract AquitardLP is ExchangeAbstract, ERC223L {
     }
 
     function _transferERC20sBought(address to, uint erc20sBought) internal override {
-        // Effects
         erc20BuyableTime += erc20sBought / erc20BuyableRate;
-
-        // Interactions
         asset.transfer(to, erc20sBought);
     }
 
@@ -59,12 +56,12 @@ contract AquitardLP is ExchangeAbstract, ERC223L {
     //WARNING DO NOT use this one if erc20sDeposited == 0.
     function noSupplyDeposit(uint erc20sDeposited, address to) payable external returns (uint shares) {
         shares = erc20sDeposited;
-        // Checks
+
         require(totalSupply() == 0);
-        // Effects
-        _mint(to, shares);
-        // Interactions
+
         asset.transferFrom(msg.sender, address(this), erc20sDeposited);
+        _mint(to, shares);
+        
         emit Deposit(msg.sender, to, erc20sDeposited, msg.value, shares);
     }
 
