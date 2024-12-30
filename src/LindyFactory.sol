@@ -9,7 +9,29 @@ pragma solidity ^0.8.28;
 import "./PinusToken.sol";
 import "./AquitardLP.0.0.1.sol";
 
+//TODO set exchange config at the factory level for consistency instead of forcing it on every PinusToken
+/*
+uint128 constant ERC20_BUYABLE_RATE = 1 ether / uint128(24 hours);
+uint128 constant ERC20_SELL_INHIBITOR = 1 ether;
+uint128 constant NATIVE_BUYABLE_RATE = .1 ether / uint128(24 hours);
+uint128 constant NATIVE_SELL_INHIBITOR = .1 ether;
+*/
+
 contract LindyFactory {
+    uint128 public immutable erc20BuyableRate;
+    uint128 public immutable erc20SellInhibitor;
+    uint128 public immutable nativeBuyableRate;
+    uint128 public immutable nativeSellInhibitor;
+
+    constructor(
+        ExchangeConfig memory ec
+    ) {
+        erc20BuyableRate = ec.erc20BuyableRate;
+        erc20SellInhibitor = ec.erc20SellInhibitor;
+        nativeBuyableRate = ec.nativeBuyableRate;
+        nativeSellInhibitor = ec.nativeSellInhibitor;
+    }
+
     event NewToken(address indexed creator, PinusToken newToken, string name, string symbol);
 
     event NewLiquidityPool(
@@ -19,7 +41,17 @@ contract LindyFactory {
         );
 
     function makeToken(string memory name, string memory symbol) external returns (PinusToken newToken) {
-        newToken = new PinusToken(msg.sender,name,symbol);
+        newToken = new PinusToken(
+            msg.sender,
+            name,
+            symbol,
+            ExchangeConfig({
+                erc20BuyableRate : erc20BuyableRate,
+                erc20SellInhibitor : erc20SellInhibitor,
+                nativeBuyableRate : nativeBuyableRate,
+                nativeSellInhibitor : nativeSellInhibitor
+            })
+            );
         emit NewToken(msg.sender, newToken, name, symbol);
     }
 

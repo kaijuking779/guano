@@ -1,8 +1,9 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 pragma solidity ^0.8.28;
 
-import "https://github.com/Vectorized/solady/blob/main/src/tokens/ERC20.sol";
-import "./ExchangeAbstract.sol";
+
+import "./AbstractLindyDex.sol";
+import "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol";
 
 /*
 This LP is for one way swaps. However adding liquidity is the same regardless.
@@ -10,15 +11,24 @@ Although this is a ERC20<>Native Vault, we are NOT using ERC7575.
 
 */
 
+/*
+interface IERC20Metadata is IERC20 {
+    function name() external view returns (string memory);
+}
+*/
 
-
-contract AquitardLP is ExchangeAbstract, ERC223L {
+contract AquitardLP 
+is 
+AbstractLindyDex, 
+AbstractERC223L,
+AbstractERC1363L
+{
     event Deposit(address indexed sender, address indexed owner, uint erc20sDeposited, uint nativesDeposited, uint shares);
     event Withdraw(address indexed sender, address indexed receiver, address indexed owner, uint erc20sWithdrawn, uint nativesWithdrawn, uint shares);
 
-    constructor(ERC20 asset, ExchangeConfig memory ec) 
-    ExchangeAbstract(ec) 
-    SwapAbstract(asset) 
+    constructor(IERC20 asset, ExchangeConfig memory ec) 
+    AbstractExchange(asset) 
+    AbstractLindyDex(ec)
     {}
 
     //NOTE The name may change for the underlying asset so we pull this dynamically.
@@ -26,14 +36,14 @@ contract AquitardLP is ExchangeAbstract, ERC223L {
     // Also keep in mind if this is used for permit2, multiple pools with the same
     // asset will have the same name and namehash.
     function name() public view override returns (string memory) {
-        return string.concat("Aquitard Liquidity Pool(",asset.name(),")");
+        return string.concat("Aquitard Liquidity Pool(",IERC20Metadata(address(asset)).name(),")");
     }
 
     function symbol() public view override returns (string memory) {
-        return string.concat(asset.symbol(),"ALP");
+        return string.concat(IERC20Metadata(address(asset)).symbol(),"ALP");
     }
 
-    function nativeToERC20Price(uint nativesSold) public override view returns (uint erc20sBought) {
+    function nativeForERC20Price(uint nativesSold) public override view returns (uint erc20sBought) {
         erc20sBought = erc20sBuyable() * nativesSold / (nativeSellInhibitor + nativesSold);
 
         uint balance = asset.balanceOf(address(this));
@@ -47,8 +57,8 @@ contract AquitardLP is ExchangeAbstract, ERC223L {
         asset.transfer(to, erc20sBought);
     }
 
-    function swapERC20ToNative(uint erc20sSold, address to) public override returns (uint nativesBought) {
-        nativesBought = erc20ToNativePrice(erc20sSold);
+    function swapERC20ForNative(uint erc20sSold, address to) public override returns (uint nativesBought) {
+        nativesBought = erc20ForNativePrice(erc20sSold);
         asset.transferFrom(msg.sender,address(this),erc20sSold);
         _transferNativesBought(to, nativesBought);
     }
@@ -61,7 +71,7 @@ contract AquitardLP is ExchangeAbstract, ERC223L {
 
         asset.transferFrom(msg.sender, address(this), erc20sDeposited);
         _mint(to, shares);
-        
+
         emit Deposit(msg.sender, to, erc20sDeposited, msg.value, shares);
     }
 

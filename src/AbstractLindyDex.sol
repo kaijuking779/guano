@@ -1,17 +1,18 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 pragma solidity ^0.8.28;
 
-import "./SwapAbstract.sol";
+import "./AbstractExchange.sol";
 
-//NOTE struct is used to make it more explicit to reduce the parameters getting mixed up.
-struct ExchangeConfig {
-    uint128 erc20BuyableRate;
-    uint128 erc20SellInhibitor;
-    uint128 nativeBuyableRate;
-    uint128 nativeSellInhibitor;
-}
 
-abstract contract ExchangeAbstract is SwapAbstract {
+
+abstract contract AbstractLindyDex is AbstractExchange {
+    //NOTE struct is used to make it more explicit to reduce the parameters getting mixed up.
+    struct ExchangeConfig {
+        uint128 erc20BuyableRate;
+        uint128 erc20SellInhibitor;
+        uint128 nativeBuyableRate;
+        uint128 nativeSellInhibitor;
+    }
     
     uint128 public immutable erc20BuyableRate;
     uint128 public immutable erc20SellInhibitor;
@@ -39,7 +40,7 @@ abstract contract ExchangeAbstract is SwapAbstract {
         return (block.timestamp - erc20BuyableTime) * erc20BuyableRate;
     }
 
-    function erc20ToNativePrice(uint erc20sSold) public override view returns (uint nativesBought) {
+    function erc20ForNativePrice(uint erc20sSold) public override view returns (uint nativesBought) {
         nativesBought = nativesBuyable() * erc20sSold / (erc20SellInhibitor + erc20sSold);
         if(address(this).balance < nativesBought) {
             nativesBought = address(this).balance;
