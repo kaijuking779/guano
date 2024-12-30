@@ -7,7 +7,7 @@ pragma solidity ^0.8.28;
 //https://docs.soliditylang.org/en/latest/style-guide.html#naming-conventions
 
 import "./PinusToken.sol";
-import "./AquitardLP.0.0.1.sol";
+import "./AquitardLP.sol";
 
 //TODO set exchange config at the factory level for consistency instead of forcing it on every PinusToken
 /*
@@ -24,7 +24,7 @@ contract LindyFactory {
     uint128 public immutable nativeSellInhibitor;
 
     constructor(
-        ExchangeConfig memory ec
+        AbstractLindyDex.ExchangeConfig memory ec
     ) {
         erc20BuyableRate = ec.erc20BuyableRate;
         erc20SellInhibitor = ec.erc20SellInhibitor;
@@ -35,9 +35,9 @@ contract LindyFactory {
     event NewToken(address indexed creator, PinusToken newToken, string name, string symbol);
 
     event NewLiquidityPool(
-        ERC20 indexed asset, 
+        IERC20 indexed asset, 
         AquitardLP liquidityPool,
-        ExchangeConfig ec
+        AbstractLindyDex.ExchangeConfig ec
         );
 
     function makeToken(string memory name, string memory symbol) external returns (PinusToken newToken) {
@@ -45,7 +45,7 @@ contract LindyFactory {
             msg.sender,
             name,
             symbol,
-            ExchangeConfig({
+            AbstractLindyDex.ExchangeConfig({
                 erc20BuyableRate : erc20BuyableRate,
                 erc20SellInhibitor : erc20SellInhibitor,
                 nativeBuyableRate : nativeBuyableRate,
@@ -57,8 +57,8 @@ contract LindyFactory {
 
     /* Native Token LP */
     function makeLiquidityPool(
-        ERC20 asset, 
-        ExchangeConfig memory ec
+        IERC20 asset, 
+        AbstractLindyDex.ExchangeConfig memory ec
     ) external payable returns (AquitardLP newLP) {
         newLP = new AquitardLP(
             asset,
@@ -76,8 +76,8 @@ contract LindyFactory {
 
     /* ERC20 LP */
     function makeLiquidityPool(
-        ERC20 asset, 
-        ExchangeConfig memory ec,
+        IERC20 asset, 
+        AbstractLindyDex.ExchangeConfig memory ec,
         uint erc20sDeposited
     ) external payable returns (AquitardLP newLP) {
         newLP = new AquitardLP(
